@@ -3,6 +3,8 @@ package com.jorden.service.impl;
 import java.util.List;
 import java.util.Map;
 
+import com.jorden.base.BaseDao;
+import com.jorden.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -24,7 +26,7 @@ public class UserServiceImpl  implements UserService{
 
 	@Autowired
 	JdbcTemplate jdbcTemplate;
-	
+
 	@Override
 	public List<Map<String, Object>> selectAll() {
 		return jdbcTemplate.queryForList("select * from user");
@@ -39,6 +41,12 @@ public class UserServiceImpl  implements UserService{
 	@Override
 	public void deleteByPrimayKey(User t) {
 		jdbcTemplate.update("delete  from user  where id = "+t.getId());
+	}
+
+	@Override
+	public void save(User user) {
+		String sql = "insert into user values(?,?,?)";
+		jdbcTemplate.update(sql,null,user.getName(),user.getAge());
 	}
 
 }

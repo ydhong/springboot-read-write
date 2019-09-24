@@ -4,9 +4,21 @@
 	<groupId>springboot-read-write</groupId>
 	<artifactId>springboot-read-write</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
-	<parent>
+    <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.4.7.RELEASE</version>
@@ -53,5 +65,15 @@
 			<artifactId>hadoop-core</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>24.1-jre</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>24.1-jre</version>
+        </dependency>
+    </dependencies>
 </project>

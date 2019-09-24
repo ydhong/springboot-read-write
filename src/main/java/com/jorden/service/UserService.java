@@ -46,5 +46,6 @@ public interface UserService {
 	  * @throws
 	  */
 	 void deleteByPrimayKey(User t );
-	
+
+	void save(User user);
 }

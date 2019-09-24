@@ -46,11 +46,11 @@ public class DynamicDataSourceAspect {
         String currentMethodName=abstractMethod.getName().toUpperCase();
         if(currentMethodName.contains(DynDataSourceEnum.SELECT.toString())||currentMethodName.contains(DynDataSourceEnum.FIND.toString())){
         	logger.info("切换数据源，现在是读请求");
-        	DynamicDataSource.setDataSource("master");
+        	DynamicDataSource.setDataSource("slave");
         	
         }else{
         	logger.info("切换数据源，现在是写请求");
-        	DynamicDataSource.setDataSource("slave");
+        	DynamicDataSource.setDataSource("master");
         }
 	}
 
